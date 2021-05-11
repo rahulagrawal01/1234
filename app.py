@@ -53,11 +53,11 @@ def predict_note_authentication(CreditScore,Geography,Gender,Age,Tenure,Balance,
   output= model.predict(sc.transform([[CreditScore,Geography,Gender,Age,Tenure,Balance,HasCrCard,IsActiveMember,EstimatedSalary]]))
   print("Heart Disease Category is",output)
   if output==[0]:
-    prediction="Naïve Bayes Classifier predict new customer will leave the bank "
+    prediction="KNN Classifier predict new customer will leave the bank "
    
 
   if output==[1]:
-    prediction="Naïve Bayes Classifier predict new customer will NOT leave the bank "
+    prediction="KNN Bayes Classifier predict new customer will NOT leave the bank "
     
     
   print(prediction)
@@ -65,18 +65,18 @@ def predict_note_authentication(CreditScore,Geography,Gender,Age,Tenure,Balance,
 def main():
     
     html_temp = """
-   <div class="" style="background-color:red;" >
+   <div class="" style="background-color:black;" >
    <div class="clearfix">           
    <div class="col-md-12">
    <center><p style="font-size:40px;color:white;margin-top:10px;">Poornima Institute of Engineering & Technology</p></center> 
    <center><p style="font-size:30px;color:white;margin-top:10px;">Department of Computer Engineering</p></center> 
-   <center><p style="font-size:20px;color:white;margin-top:10px;">MID TERM 1 pactice by piet18cs116</p></center> 
+   <center><p style="font-size:20px;color:white;margin-top:10px;">MID TERM 1 pactice by piet18cs132 KNN </p></center> 
    </div>
    </div>
    </div>
    """
     st.markdown(html_temp,unsafe_allow_html=True)
-    st.header("predict new customer will leave the bank or NOT usnig  Naïve Bayes Classifier ")
+    st.header("predict new customer will leave the bank or NOT usnig KKN Classifier ")
     CreditScore = st.number_input('Enter  Cradit Score',300,1000)
     Geography = st.number_input('Insert Geography 0 for france and 1 for spain',0,1)
     Gender = st.number_input('Insert gender 0 for male and 1 for female',0,1)
@@ -91,9 +91,9 @@ def main():
     resul=""
     if st.button("Predict"):
       result=predict_note_authentication(CreditScore,Geography,Gender,Age,Tenure,Balance,HasCrCard,IsActiveMember,EstimatedSalary)
-      st.success('Model has predicted {}'.format(result))
+      st.success('{}'.format(result))
     if st.button("About"):
-      st.subheader("Developed by Rahul kumar agrawal 1st mid term ")
+      st.subheader("Developed by Shruti jain 1st mid term ")
       st.subheader("C-Section,PIET")
 
 if __name__=='__main__':
